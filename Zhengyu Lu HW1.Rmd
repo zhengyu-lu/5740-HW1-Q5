@@ -1,0 +1,90 @@
+---
+title: "HW1"
+author: "Lu"
+date: '2022-09-12'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### (a) Which of the predictors are quantitative, and which are qualitative?
+
+```{r}
+Auto <- read.csv("Auto.csv", na.strings = "?",
+                 stringsAsFactors = T)
+Auto <- na.omit(Auto)
+str(Auto)
+```
+I think "name" and "origin" are qualitiative, the other variables are quantitative
+
+### (b) What is the range of each quantitative predictor? You can answerthis using the range() function.
+
+```{r}
+range(Auto$mpg)
+range(Auto$cylinders)
+range(Auto$displacement)
+range(Auto$horsepower)
+range(Auto$weight)
+range(Auto$acceleration)
+range(Auto$year)
+```
+### (c)What is the mean and standard deviation of each quantitative predictor?
+#### mean
+```{r}
+summary(Auto[,1:7])
+```
+#### stanadrd deivation
+```{r}
+sd(Auto$mpg)
+sd(Auto$cylinders)
+sd(Auto$displacement)
+sd(Auto$horsepower)
+sd(Auto$weight)
+sd(Auto$acceleration)
+sd(Auto$year)
+```
+
+### (d) Now remove the 10th through 85th observations. What is the range, mean, and standard deviation of each predictor in the subset of the data that remains? 
+#### remove
+```{r}
+subset<- Auto[-c(10:85),(1:8)]
+```
+#### range
+```{r}
+range(subset$mpg)
+range(subset$cylinders)
+range(subset$displacement)
+range(subset$horsepower)
+range(subset$weight)
+range(subset$acceleration)
+range(subset$year)
+range(subset$origin)
+```
+#### mean
+```{r}
+summary(subset)
+```
+#### standard deviation
+```{r}
+sd(subset$mpg)
+sd(subset$cylinders)
+sd(subset$displacement)
+sd(subset$horsepower)
+sd(subset$weight)
+sd(subset$acceleration)
+sd(subset$year)
+sd(subset$origin)
+```
+### (e) Using the full data set, investigate the predictors graphically, using scatterplots or other tools of your choice. Create some plots highlighting the relationships
+```{r}
+pairs(Auto)
+```
+
+As the scatterplots shown, there are some obvious linear and non-linear relationships among the predictors. For example, mpg and horsepower have a non-linear relationship, mpg decrease as horsepower increase;Displacement and weight have a near linear relationship, displacement increase as weight increase.
+
+### Suppose that we wish to predict gas mileage (mpg) on the basis of the other variables. Do your plots suggest that any of the other variables might be useful in predicting mpg? Justify your answer.
+
+As the scatterplots shown, cylinders, horsepower, year, origin might be useful in predicting mpg becasue they have obvious linear and non-linear relationships. Cylinders=4 tend to have higher mpg, Japanese cars (origin=3) tend to have higher mpg than US and Eurepeans, mpg increase as the year increase but mpg decrease as the horsepower increase. 
+
