@@ -37,5 +37,5 @@ sd(subset$acceleration)
 sd(subset$year)
 sd(subset$origin)
 pairs(Auto)
-##9(e) As the scatterplots shown, there are some obvious linear and non-linear relationships among the predictors. For example, mpg and horsepower have a non-linear relationship, mpg decrease as horsepower increase;Displacement and weight have a near linear relationship, displacement increase as weight increase.
-##9(f) As the scatterplots shown, cylinders, horsepower, year, origin might be useful in predicting mpg becasue they have obvious linear and non-linear relationships. Cylinders=4 tend to have higher mpg, Japanese cars (origin=3) tend to have higher mpg than US and Eurepeans, mpg increase as the year increase but mpg decrease as the horsepower increase. 
+##9（e) As the scatterplots show, there are some obvious linear and non-linear relationships among the predictors. For example, mpg and horsepower have a non-linear relationship, mpg decreases as horsepower increases; Displacement and weight have a nearly linear relationship, displacement increases as weight increases.
+##9(f)As the scatterplots show, cylinders, horsepower, year, origin might be useful in predicting mpg because they have obvious linear and non-linear relationships. Cylinders=4 tend to have higher mpg, Japanese cars (origin=3) tend to have higher mpg than US and European cars, mpg increase as the year increase but mpg decrease as the horsepower increase.
